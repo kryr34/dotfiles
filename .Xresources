@@ -1,0 +1,64 @@
+! Panda for Xresources terminals
+! Support: https://github.com/SuddenGunter
+! Based on https://github.com/PandaTheme/panda-terminal
+! Converted via http://terminal.sexy
+! special
+*.foreground:   #f3f3f3
+*.background:   #1f1f20
+*.cursorColor:  #f3f3f3
+! black
+*.color0:       #5a5d62
+*.color8:       #5a5d62
+! red
+*.color1:       #ff276d
+*.color9:       #ff276d
+! green
+*.color2:       #00ff8b
+*.color10:      #ffffff
+!#00ffdb
+! yellow
+*.color3:       #ffb863
+*.color11:      #ffb863
+! blue
+*.color4:       #6cb1ff
+*.color12:      #6cb1ff
+!*.color4:       #6cb1ff
+!*.color12:      #6cb1ff
+! magenta
+*.color5:       #b184ef
+*.color13:      #b184ef
+! cyan
+*.color6:       #67d3d2
+*.color14:      #47c3c2
+! white
+*.color7:       #f3f3f3
+*.color15:      #f3f3f0
+
+! URxvt
+URxvt.scrollBar: false
+URxvt.font: xft:Monospace:size=10
+URxvt*transparent: true
+URxvt*shading: 30
+! URxvt.internalBorder: 15
+! URxvt.letterSpace: 0
+! URxvt.perl-ext-common: default,matcher,font-size
+
+! rofi
+rofi.font: scientifica Regular 8
+rofi.terminal: urxvtc
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e {ssh-client} {host}
+
+! Clickable URLs
+URxvt.url-launcher: qutebrowser
+URxvt.matcher.button: 1
+
+! Use Control-Shift-V/C for X clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! Resizeable text
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
