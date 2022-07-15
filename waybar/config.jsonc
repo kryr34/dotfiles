@@ -1,0 +1,113 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 24, // Waybar height
+	"spacing": 3,
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode", "tray"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/mediaplayer", "bluetooth", "network", "pulseaudio", "temperature", "battery", "clock"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+			"urgent": ""
+        }
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+		"format": "{:%a %d %b %H:%M}",
+		"format-alt": "{:%c}"
+	},
+    "cpu": { "format": "{usage}% " },
+    "memory": { "format": "{}% " },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+        //    "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ", // An empty format will hide the module
+        //"format-discharging": "yes", // An empty format will hide the module
+        "format-full": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 1
+    },
+	"temperature": {
+		//"thermal-zone": 1,
+	    "critical-threshold": 60,
+		"format-critical": "{temperatureC}°C ",
+		"format": ""
+	},
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "⚠",
+		"tooltip-format": "{ifname} via {gwaddr}"
+    },
+	"network": {
+	    //"interface": "wlp2s0",
+	    "format": "{ifname}",
+	    "format-wifi": "",
+	    "format-ethernet": "",
+        "format-disconnected": "⚠",
+	    "tooltip-format": "{ifname} via {gwaddr}",
+	    "tooltip-format-wifi": "{essid} ({signalStrength}%) {ipaddr}",
+	    "tooltip-format-ethernet": "{ipaddr}/{cidr}({ifname}) via {gwaddr}",
+	    "tooltip-format-disconnected": "Disconnected",
+	    "max-length": 50
+	},
+	"bluetooth": {
+		"format": "",
+		"format-on": "",
+		"format-connected": " {num_connections}",
+		"format-off": "",
+		//"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	},
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/mediaplayer": {
+        "format": "{icon}{}",
+		"return-type": "json",
+    	"format-icons": {
+    	    "Playing": " ",
+    	    "Paused": " "
+    	},
+        "max-length": 25,
+        "interval": 1, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+		"on-click": "playerctl play-pause",
+		"tooltip": true
+	}
+}
+

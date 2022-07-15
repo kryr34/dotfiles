@@ -1,0 +1,87 @@
+* {
+    border: 1 solid;
+    border: none;
+    border-radius: 0;
+    font-family: "Ubuntu Nerd Font", "Font Awesome 6 Free Light";
+    font-size: 15px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0,0,0,0.8);
+    color: white;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "Ubuntu";
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #f9944d;
+    border-top: 2px solid;
+}
+
+#mode {
+    font-style: italic;
+    background: #64222D;
+    border-bottom: 3px solid white;
+    padding: 0 2px;
+}
+
+.modules-right label {
+    margin: 0 2px;
+    padding: 0 2px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery icon {
+    color: red;
+}
+#battery.charging {
+    color: #20ff20;
+}
+#battery.warning:not(.charging) {
+    color: white;
+	animation: blink 0.5s linear infinite alternate;
+}
+
+#temperature.critical {
+    color: white;
+	animation: blink 1.5s linear infinite alternate;
+}
+
+#network.disconnected { background: #f53c3c; }
+
+#custom-mediaplayer.Playing { color: #ff4040; }
+#custom-mediaplayer.Paused { color: #ffffff; }
+
+#bluetooth { color: #0082fc; }
+#bluetooth.connected { color: #30ff30; }
+#bluetooth.off {
+    margin: 0 0;
+    padding: 0 0;
+}
+
