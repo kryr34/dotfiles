@@ -1,3 +1,6 @@
+# enviriment varible
+export CHROME_EXECUTABLE=/usr/bin/chromium
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -19,8 +22,12 @@ alias yay='yay --color=auto'
 alias grep='grep --color=auto'
 
 alias vi='nvim'
+alias vim='nvim'
 alias py='python'
 alias la='ls --all'
+alias tree='tree -C'
+alias stow='stow -v'
+alias diff='diff --color=auto'
 # end of aliasese
 
 # prompt
