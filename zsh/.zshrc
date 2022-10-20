@@ -15,19 +15,7 @@ compinit
 # End of lines added by compinstall
 
 # aliases
-alias ls='ls -F --color=auto'
-alias ip='ip --color=auto'
-alias pacman='pacman --color=auto'
-alias yay='yay --color=auto'
-alias grep='grep --color=auto'
-
-alias vi='nvim'
-alias vim='nvim'
-alias py='python'
-alias la='ls --all'
-alias tree='tree -C'
-alias stow='stow -v'
-alias diff='diff --color=auto'
+source ~/.zsh_alieses
 # end of aliasese
 
 # prompt
