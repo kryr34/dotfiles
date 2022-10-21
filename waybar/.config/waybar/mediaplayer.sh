@@ -5,11 +5,14 @@ album=$(playerctl metadata album)
 artist=$(playerctl metadata artist)
 
 len=${#title}
-if ((len > 20))
+
+maxlen=$1
+if ([ $# -ge 1 ]&&[ $len -gt $maxlen ])
 then
-	i=$(($(date +%S) * 4 % $len))
+	speed=$((maxlen * 2/10))
+	i=$(($(date +%S) * speed % $len))
 	text="$title   $title"
-	text=${text:i:40}
+	text=${text:i:maxlen}
 else
 	text=$title
 fi
@@ -26,5 +29,5 @@ echo -n "{\
 	\"alt\": \"$player_status\",\
 	\"text\": \"$text\",\
 	\"tooltip\": \"$tooltip\",\
-	\"class\": \"$player_status\",\
+	\"class\": \"$player_status\"\
 }"	
