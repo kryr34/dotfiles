@@ -8,7 +8,8 @@
 }
 
 window#waybar {
-    background: rgba(0,0,0,0.8);
+    background: rgba(10, 12, 11, 0.8);
+    background: rgba(10, 12, 11, 0.9);
     color: white;
 }
 
@@ -30,8 +31,8 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    color: #f9944d;
-    border-top: 2px solid;
+    color: rgb(144, 180, 75);
+    border-bottom: 2px solid;
 }
 
 #mode {
@@ -67,6 +68,10 @@ window#waybar {
     color: white;
 	animation: blink 0.5s linear infinite alternate;
 }
+#battery.critical:not(.charging) {
+    color: white;
+	animation: blink 0.3s linear infinite alternate;
+}
 
 #temperature.critical {
     color: white;
@@ -84,4 +89,7 @@ window#waybar {
     margin: 0 0;
     padding: 0 0;
 }
+
+#pulseaudio { color: #ff5555; }
+#pulseaudio.muted { color: #ffffff; }
 
