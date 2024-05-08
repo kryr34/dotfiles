@@ -16,8 +16,8 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-    ./vim.nix
-    ./emacs.nix
+    ./vim
+#    ./emacs.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
