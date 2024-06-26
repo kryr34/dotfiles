@@ -1,0 +1,4 @@
+NO_FORMAT="\033[0m"
+C_RED="\033[38;5;9m"
+PS1=" [nixos@X240]${C_RED} PROMPT HERE >>> ${NO_FORMAT}"
+
