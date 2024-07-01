@@ -27,5 +27,6 @@ in
     grep = "grep --color=auto";
     diff = "diff --color=auto";
     tree = "tree -C";
+    where = "which"; # this makes more sense >:(
   };
 }
