@@ -23,4 +23,5 @@
   neofetch
   bat
   delta
+  tldr
 ])
