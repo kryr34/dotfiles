@@ -20,6 +20,7 @@
     # ./neovim
     # ./emacs.nix
     ./shell
+    ./kitty
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -36,6 +37,7 @@
 
   programs.bash.enable = true;
   programs.zsh.enable = true;
+  programs.kitty.enable = true;
 
   programs.fzf = {
     enable = true;
