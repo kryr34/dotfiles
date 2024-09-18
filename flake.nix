@@ -4,10 +4,21 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+#    nixpkgs.overlays = [
+#      (import (builtins.fetchTarball {
+#        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+#      }))
+#    ];
+#    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+#    doomemacs = {
+#      url = "github:doomemacs/doomemacs";
+#      flake = false;
+#    };
   };
 
   outputs =

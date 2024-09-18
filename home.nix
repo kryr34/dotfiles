@@ -18,9 +18,10 @@
   imports = [
     ./vim
     # ./neovim
-    # ./emacs.nix
+    # ./emacs
     ./shell
     ./kitty
+    # ./waybar
   ];
 
   # The home.packages option allows you to install Nix packages into your
