@@ -29,4 +29,5 @@ in
     tree = "tree -C";
     where = "which"; # this makes more sense >:(
   };
+  programs.zoxide.enable = true;
 }
